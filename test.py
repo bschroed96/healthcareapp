@@ -4,10 +4,11 @@ import os
 
 user = os.environ['USER']
 pwd = os.environ['PWD']
+endpoint = os.environ['END']
 
 if __name__ == '__main__':
     client = pymongo.MongoClient(
-        "mongodb+srv://" + user + ":" + pwd + "@healthcluster.jdgve.mongodb.net/HealthCluster?retryWrites=true&w=majority",
+        "mongodb+srv://" + user + ":" + pwd + endpoint,
         ssl_cert_reqs=ssl.CERT_NONE
     )
     db = client.test
